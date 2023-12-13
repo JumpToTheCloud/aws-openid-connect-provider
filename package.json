@@ -1,5 +1,5 @@
 {
-  "name": "aws-openid-connect-provider",
+  "name": "@jttc/aws-openid-connect-provider",
   "repository": {
     "type": "git",
     "url": "git@github.com:JumpToTheCloud/aws-openid-connect-provider.git"
@@ -12,11 +12,14 @@
     "compile": "npx projen compile",
     "default": "npx projen default",
     "docgen": "npx projen docgen",
+    "docs:build": "npx projen docs:build",
+    "docs:serve": "npx projen docs:serve",
     "eject": "npx projen eject",
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -26,7 +29,8 @@
     "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
-    "projen": "npx projen"
+    "projen": "npx projen",
+    "commit": "./node_modules/cz-customizable/standalone.js"
   },
   "author": {
     "name": "Antonio Márquez Pérez",
@@ -38,11 +42,15 @@
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
-    "aws-cdk-lib": "2.1.0",
-    "constructs": "10.0.5",
+    "aws-cdk-lib": "2.103.0",
+    "commitizen": "^4.3.0",
+    "constructs": "10.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "jest": "^29.7.0",
     "jest-junit": "^15",
     "jsii": "~5.0.0",
@@ -50,6 +58,7 @@
     "jsii-docgen": "^10.2.5",
     "jsii-pacmak": "^1.93.0",
     "jsii-rosetta": "~5.0.0",
+    "prettier": "^3.1.1",
     "projen": "^0.77.6",
     "standard-version": "^9",
     "ts-jest": "^29.1.1",
@@ -57,16 +66,20 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
-    "constructs": "^10.0.5"
+    "aws-cdk-lib": "^2.103.0",
+    "constructs": "^10.3.0"
   },
   "keywords": [
-    "cdk"
+    "aws",
+    "cdk",
+    "oidc",
+    "openid"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",
   "jest": {
+    "verbose": true,
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"
@@ -110,7 +123,12 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "aws-openid-connect-provider",
+        "module": "aws_openid_connect_provider"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"

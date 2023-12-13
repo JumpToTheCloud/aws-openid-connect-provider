@@ -1,1 +1,1 @@
-# replace this
+# AWS OpenId Connect Provider Construct Library
