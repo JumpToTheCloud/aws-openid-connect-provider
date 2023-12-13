@@ -14,10 +14,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'git@github.com:JumpToTheCloud/aws-openid-connect-provider.git',
   prettier: true,
   keywords: ['aws', 'cdk', 'openid', 'oidc'],
-  publishToPypi: {
-    distName: 'aws-openidconnectprovider',
-    module: 'aws_openidconnectprovider',
-  },
   prettierOptions: {
     settings: {
       trailingComma: TrailingComma.ES5,
