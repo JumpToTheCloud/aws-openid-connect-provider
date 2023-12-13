@@ -125,8 +125,8 @@
     "outdir": "dist",
     "targets": {
       "python": {
-        "distName": "aws-openid-connect-provider",
-        "module": "aws_openid_connect_provider"
+        "distName": "aws-openidconnectprovider",
+        "module": "aws_openidconnectprovider"
       }
     },
     "tsc": {

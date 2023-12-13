@@ -15,8 +15,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   prettier: true,
   keywords: ['aws', 'cdk', 'openid', 'oidc'],
   publishToPypi: {
-    distName: 'aws-openid-connect-provider',
-    module: 'aws_openid_connect_provider',
+    distName: 'aws-openidconnectprovider',
+    module: 'aws_openidconnectprovider',
   },
   prettierOptions: {
     settings: {
